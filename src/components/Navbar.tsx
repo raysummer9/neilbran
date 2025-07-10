@@ -5,11 +5,10 @@ export default function Navbar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const navItems = [
-    { label: "Home", href: "#" },
-    { label: "About Us", href: "#" },
-    { label: "Testimonials", href: "#" },
-    { label: "Wallets", href: "#" },
-    { label: "Scam Tracing", href: "#" },
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Testimonials", href: "/testimonials" },
+    { label: "Scam Tracing & Recovery", href: "/scam-tracing" },
   ];
 
   return (
@@ -35,7 +34,7 @@ export default function Navbar() {
         </div>
         {/* Desktop Contact Us Button */}
         <div className="hidden md:flex items-center">
-          <a href="#" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-6 py-3 transition shadow-none">Contact us</a>
+          <a href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-6 py-3 transition shadow-none">Contact us</a>
         </div>
         {/* Hamburger Icon for Mobile */}
         <button
@@ -85,7 +84,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#"
+            href="/contact"
             className="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-6 py-3 transition shadow-none text-center"
             onClick={() => setSidebarOpen(false)}
           >

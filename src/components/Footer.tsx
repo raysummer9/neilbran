@@ -18,8 +18,8 @@ export default function Footer() {
         </div>
         {/* Center: Nav Links */}
         <nav className="flex flex-wrap justify-center gap-6 md:gap-10 mb-8 md:mb-0 min-w-0">
-          <a href="#" className="text-gray-400 font-semibold hover:text-blue-600 transition">About Us</a>
-          <a href="#" className="text-gray-400 font-semibold hover:text-blue-600 transition">Testimonials</a>
+          <a href="/about" className="text-gray-400 font-semibold hover:text-blue-600 transition">About Us</a>
+          <a href="/testimonials" className="text-gray-400 font-semibold hover:text-blue-600 transition">Testimonials</a>
           <a href="#" className="text-gray-400 font-semibold hover:text-blue-600 transition">Legal</a>
         </nav>
         {/* Right: Subscribe Form */}
