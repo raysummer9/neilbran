@@ -45,7 +45,7 @@ export default function SupportSection() {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-5xl">
-          {supportItems.map((item, i) => {
+          {supportItems.map((item) => {
             const Icon = item.icon;
             return (
               <div key={item.title} className="flex flex-col items-center text-center px-4 py-8 rounded-xl">

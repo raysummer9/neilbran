@@ -10,11 +10,11 @@ export default function WhyLoveCarSection() {
           {/* Text and Features */}
           <div className="flex-1 flex flex-col items-start">
             <span className="text-blue-600 font-semibold mb-1 text-sm md:text-base">About Us</span>
-            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8">Why You'll Love NeilBran</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8">Why You&apos;ll Love NeilBrina</h2>
             <div className="space-y-8 w-full">
               <div className="border-l-4 border-blue-600 pl-4">
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-1">We'll Upload your locked wallet and guesses</h3>
-                <p className="text-gray-600 text-sm md:text-base">Our machine learning dashboard allows us to upload data whenever you'd like to improve our odds of recovery. All data is encrypted in transit and at rest.</p>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-1">We&apos;ll Upload your locked wallet and guesses</h3>
+                <p className="text-gray-600 text-sm md:text-base">Our machine learning dashboard allows us to upload data whenever you&apos;d like to improve our odds of recovery. All data is encrypted in transit and at rest.</p>
               </div>
               <div className="border-l-4 border-transparent pl-4">
                 <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-1">Your wallet secured by an air-gap</h3>

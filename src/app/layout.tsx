@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "NeilBran - Crypto Asset Recovery",
+  title: "NeilBrina - Crypto Asset Recovery",
   description: "The simplest way to recover your lost wallet password and investigate scammed crypto.",
 };
 

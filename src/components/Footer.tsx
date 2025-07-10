@@ -11,7 +11,7 @@ export default function Footer() {
               <span className="text-blue-600">N</span><span className="text-yellow-400">B</span>
             </span>
             <div className="flex flex-col leading-tight min-w-0">
-              <span className="font-bold text-xl text-gray-900">NeilBran Hacks</span>
+              <span className="font-bold text-xl text-gray-900">NeilBrina Hacks</span>
               <span className="text-xs text-gray-500 font-medium -mt-1">Crypto Asset Recovery</span>
             </div>
           </div>

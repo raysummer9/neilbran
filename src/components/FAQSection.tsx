@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     q: "Can I trust you?",
-    a: "We understand the issue of trust and authority is one that must be addressed before our clients feel comfortable sharing sensitive financial information with us. Our founder, Neil Bran has been publicly featured on top repuable news and blog agencies. Furthermore, we are a registered LLC in good standing in the state of New Hampshire with a public business address.",
+    a: "We understand the issue of trust and authority is one that must be addressed before our clients feel comfortable sharing sensitive financial information with us. Our founder, Neil Brina has been publicly featured on top repuable news and blog agencies. Furthermore, we are a registered LLC in good standing in the state of New Hampshire with a public business address.",
   },
   {
     q: "Can you recover scammed or stolen assets?",

@@ -9,14 +9,14 @@ const carouselTestimonials = [
     name: 'Sophia Lee',
     title: 'Crypto Investor',
     image: '/images/testimonials/sophia.png',
-    quote: 'NeilBran Hacks recovered my lost crypto after a scam. Their service is fast, professional, and trustworthy.',
+    quote: 'NeilBrina Hacks recovered my lost crypto after a scam. Their service is fast, professional, and trustworthy.',
     logo: '/images/publications/forbes.png',
   },
   {
     name: 'Carlos Mendes',
     title: 'Entrepreneur',
     image: '/images/testimonials/carlos.png',
-    quote: 'I thought my crypto was gone forever, but NeilBran Hacks brought it back. Highly recommended!',
+    quote: 'I thought my crypto was gone forever, but NeilBrina Hacks brought it back. Highly recommended!',
     logo: '/images/publications/bbc.webp',
   },
   {
@@ -31,7 +31,7 @@ const carouselTestimonials = [
     name: 'David Kim',
     title: 'Software Engineer',
     image: '/images/testimonials/david.png',
-    quote: 'I forgot my wallet password and NeilBran Hacks recovered it in days. Amazing!',
+    quote: 'I forgot my wallet password and NeilBrina Hacks recovered it in days. Amazing!',
     logo: '/images/publications/motherboard.webp',
   },
   {
@@ -46,7 +46,7 @@ const carouselTestimonials = [
     name: 'Lucas Brown',
     title: 'Day Trader',
     image: '/images/testimonials/lucas.png',
-    quote: 'Lost my wallet address and thought it was over. NeilBran Hacks found it for me!',
+    quote: 'Lost my wallet address and thought it was over. NeilBrina Hacks found it for me!',
     logo: '/images/publications/forbes.png',
   },
   {
@@ -61,7 +61,7 @@ const carouselTestimonials = [
     name: 'James O’Connor',
     title: 'Business Owner',
     image: '/images/testimonials/james.png',
-    quote: 'My wallet was hacked and I lost hope. NeilBran Hacks recovered my funds and restored my faith.',
+    quote: 'My wallet was hacked and I lost hope. NeilBrina Hacks recovered my funds and restored my faith.',
     logo: '/images/publications/the-block.webp',
   },
 ];
@@ -81,7 +81,7 @@ export default function TestimonialsPage() {
             className="mx-auto mb-8"
           />
           <blockquote className="text-2xl md:text-3xl text-gray-400 font-semibold mb-10 leading-snug">
-            "Losing the password to your wallet can cost you millions, but options for recovery exist."
+            &quot;Losing the password to your wallet can cost you millions, but options for recovery exist.&quot;
           </blockquote>
           <div className="flex flex-col items-center gap-2">
             <Image

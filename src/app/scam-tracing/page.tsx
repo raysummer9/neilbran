@@ -22,7 +22,7 @@ export default function ScamTracingPage() {
           <span className="text-blue-600 font-semibold text-base md:text-lg mb-2 block">Our mission</span>
           <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6">Combatting sophisticated scammers</h1>
           <p className="text-gray-700 text-base md:text-lg mb-4">
-            <span className="font-bold text-gray-900">Ransomware and crypto scams are becoming more common</span>, and bad actors are using innovative techniques to obfuscate their trail and to hide from law enforcement. The ever increasing sophistication of scammers is a challenge for local law enforcement who don't have the training of funding to properly investigate crimes on the blockchain.
+            <span className="font-bold text-gray-900">Ransomware and crypto scams are becoming more common</span>, and bad actors are using innovative techniques to obfuscate their trail and to hide from law enforcement. The ever increasing sophistication of scammers is a challenge for local law enforcement who don&apos;t have the training of funding to properly investigate crimes on the blockchain.
           </p>
           <p className="text-gray-700 text-base md:text-lg mb-4">
             <span className="font-bold text-gray-900">Law enforcement are likely to never pursue the case</span> without a clear understanding of what took place and a real-world-entity to pursue.

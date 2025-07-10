@@ -11,8 +11,8 @@ export default function CallToAction() {
               Ready to Recover Your Crypto?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Don't let a forgotten password or scammer keep you from your digital assets. 
-              Our expert team is here to help you reclaim what's yours.
+              Don&apos;t let a forgotten password or scammer keep you from your digital assets. 
+              Our expert team is here to help you reclaim what&apos;s yours.
             </p>
             <Link
               href="/contact"
