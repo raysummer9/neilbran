@@ -21,8 +21,8 @@ export default function Navbar() {
             <span className="text-blue-600">N</span><span className="text-yellow-400">B</span>
           </span>
           <div className="flex flex-col leading-tight">
-            <span className="font-bold text-xl text-gray-900">Crypto Asset</span>
-            <span className="text-xs text-gray-500 font-medium -mt-1">Recovery</span>
+            <span className="font-bold text-xl text-gray-900">NeilBran Hacks</span>
+            <span className="text-xs text-gray-500 font-medium -mt-1">Crypto Asset Recovery</span>
           </div>
         </div>
         {/* Desktop Nav Links */}
@@ -62,10 +62,6 @@ export default function Navbar() {
             <span className="text-3xl font-extrabold">
               <span className="text-blue-600">N</span><span className="text-yellow-400">B</span>
             </span>
-            <div className="flex flex-col leading-tight">
-              <span className="font-bold text-xl text-gray-900">Crypto Asset</span>
-              <span className="text-xs text-gray-500 font-medium -mt-1">Recovery</span>
-            </div>
           </div>
           <button
             className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"

@@ -4,8 +4,8 @@ import TransitionSlideUp from "@/components/TransitionSlideUp";
 
 export default function WhyLoveCarSection() {
   return (
-    <TransitionSlideUp>
-      <section className="w-full bg-white flex flex-col items-center justify-center py-12 md:py-20 px-4 md:px-0">
+    <section className="w-full bg-white flex flex-col items-center justify-center py-12 md:py-20 px-4 md:px-0">
+      <TransitionSlideUp>
         <div className="max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
           {/* Text and Features */}
           <div className="flex-1 flex flex-col items-start">
@@ -38,7 +38,7 @@ export default function WhyLoveCarSection() {
             />
           </div>
         </div>
-      </section>
-    </TransitionSlideUp>
+      </TransitionSlideUp>
+    </section>
   );
 } 

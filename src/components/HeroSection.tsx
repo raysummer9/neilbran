@@ -13,8 +13,8 @@ const publications = [
 
 export default function HeroSection() {
   return (
-    <TransitionSlideUp>
-      <section className="w-full min-h-screen bg-white flex flex-col items-center justify-center">
+    <section className="w-full min-h-screen bg-white flex flex-col items-center justify-center">
+      <TransitionSlideUp>
         <div className="w-full max-w-7xl mx-auto px-4 md:px-8 flex flex-col-reverse md:flex-row items-center justify-center gap-8 md:gap-0 pb-0 md:pb-4">
           {/* Left: Text Content */}
           <div className="flex-1 flex flex-col items-start justify-center max-w-xl">
@@ -40,25 +40,24 @@ export default function HeroSection() {
             />
           </div>
         </div>
-        {/* Publications Bar */}
-        <div className="w-full flex flex-col items-center mt-16 md:mt-12">
-          <span className="text-gray-500 text-base md:text-lg mb-6 font-poppins">Trusted by 100+ publications...</span>
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-16 w-full max-w-5xl">
-            {publications.map((pub) => (
-              <div key={pub.alt} className="flex items-center justify-center h-4 md:h-8">
-                <Image
-                  src={pub.src}
-                  alt={pub.alt}
-                  width={56}
-                  height={16}
-                  className="object-contain h-4 w-auto md:h-8 md:w-auto md:min-w-[70px] md:min-h-[22px]"
-                  sizes="(min-width: 768px) 70px, 56px"
-                />
-              </div>
-            ))}
-          </div>
+      </TransitionSlideUp>
+      <div className="w-full flex flex-col items-center mt-16 md:mt-12">
+        <span className="text-gray-500 text-base md:text-lg mb-6 font-poppins">Trusted by 100+ publications...</span>
+        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-16 w-full max-w-5xl">
+          {publications.map((pub) => (
+            <div key={pub.alt} className="flex items-center justify-center h-4 md:h-8">
+              <Image
+                src={pub.src}
+                alt={pub.alt}
+                width={56}
+                height={16}
+                className="object-contain h-4 w-auto md:h-8 md:w-auto md:min-w-[70px] md:min-h-[22px]"
+                sizes="(min-width: 768px) 70px, 56px"
+              />
+            </div>
+          ))}
         </div>
-      </section>
-    </TransitionSlideUp>
+      </div>
+    </section>
   );
 } 
