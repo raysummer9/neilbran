@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import TransitionSlideUp from "@/components/TransitionSlideUp";
+import Link from "next/link";
 
 const publications = [
   { src: "/images/publications/the-block.webp", alt: "The Block" },
@@ -25,8 +26,8 @@ export default function HeroSection() {
               The simplest way to recover your lost wallet password and investigate scammed crypto.
             </p>
             <div className="flex gap-4">
-              <button className="px-6 py-3 rounded-md border border-gray-300 bg-white text-gray-900 font-medium hover:bg-gray-100 transition">Testimonials</button>
-              <button className="px-6 py-3 rounded-md bg-blue-600 text-white font-medium hover:bg-blue-700 transition">Contact an expert</button>
+              <Link href="/testimonials" className="px-6 py-3 rounded-md border border-gray-300 bg-white text-gray-900 font-medium hover:bg-gray-100 transition">Testimonials</Link>
+              <Link href="/contact" className="px-6 py-3 rounded-md bg-blue-600 text-white font-medium hover:bg-blue-700 transition">Contact an expert</Link>
             </div>
           </div>
           {/* Right: Image */}

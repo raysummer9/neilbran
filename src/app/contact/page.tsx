@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import { FiShield, FiDatabase, FiEdit } from 'react-icons/fi';
+import FAQSection from '@/components/FAQSection';
 
 const features = [
   {
@@ -42,6 +43,8 @@ export default function ContactPage() {
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [apiMessage, setApiMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
     const { name, value, type } = e.target;
@@ -73,26 +76,43 @@ export default function ContactPage() {
     return newErrors;
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const validationErrors = validate();
     setErrors(validationErrors);
     setSubmitted(true);
+    setApiMessage(null);
     if (Object.keys(validationErrors).length === 0) {
-      // Submit form (e.g., send to API)
-      alert('Form submitted!');
-      setForm({
-        firstName: '',
-        lastName: '',
-        country: '',
-        email: '',
-        phone: '',
-        recoveryType: '',
-        walletType: '',
-        lostAmount: '',
-        privacy: false,
-      });
-      setSubmitted(false);
+      setLoading(true);
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(form),
+        });
+        const data = await res.json();
+        if (data.success) {
+          setApiMessage({ type: 'success', text: 'Your message has been sent successfully!' });
+          setForm({
+            firstName: '',
+            lastName: '',
+            country: '',
+            email: '',
+            phone: '',
+            recoveryType: '',
+            walletType: '',
+            lostAmount: '',
+            privacy: false,
+          });
+          setSubmitted(false);
+        } else {
+          setApiMessage({ type: 'error', text: data.error || 'Failed to send your message. Please try again.' });
+        }
+      } catch (error) {
+        setApiMessage({ type: 'error', text: 'Failed to send your message. Please try again.' });
+      } finally {
+        setLoading(false);
+      }
     }
   }
 
@@ -121,6 +141,9 @@ export default function ContactPage() {
           </div>
           {/* Right: Contact Form */}
           <form className="flex-1 bg-white rounded-2xl shadow-md p-6 md:p-10 flex flex-col gap-4 max-w-lg mx-auto" onSubmit={handleSubmit} noValidate>
+            {apiMessage && (
+              <div className={`text-center text-base font-semibold mb-2 ${apiMessage.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>{apiMessage.text}</div>
+            )}
             <div className="flex gap-4">
               <div className="flex-1">
                 <label className="block text-gray-700 font-semibold mb-1">First name</label>
@@ -162,7 +185,7 @@ export default function ContactPage() {
             </div>
             <div className="flex gap-4">
               <div className="flex-1">
-                <label className="block text-gray-700 font-semibold mb-1">Choose your wallet type</label>
+                <label className="block text-gray-700 font-semibold mb-1">Wallet type</label>
                 <select name="walletType" className={`w-full border ${errors.walletType && submitted ? 'border-red-500' : 'border-gray-200'} rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 ${darkPlaceholder}`} value={form.walletType} onChange={handleChange}>
                   <option className="text-gray-600" value="">Select one...</option>
                   <option>Bitcoin</option>
@@ -184,10 +207,11 @@ export default function ContactPage() {
               <label htmlFor="privacy" className="text-gray-600 text-sm">You agree to our friendly <a href="#" className="underline">privacy policy</a>.</label>
             </div>
             {errors.privacy && submitted && <div className="text-red-500 text-sm mt-1">{errors.privacy}</div>}
-            <button type="submit" className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-6 py-3 text-lg transition">Send message</button>
+            <button type="submit" className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-6 py-3 text-lg transition" disabled={loading}>{loading ? 'Sending...' : 'Send message'}</button>
           </form>
         </div>
       </div>
+      <FAQSection />
     </main>
   );
 } 

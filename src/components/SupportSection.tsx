@@ -8,28 +8,28 @@ const supportItems = [
     title: "Password doesn't work",
     desc: "You thought you knew your password, but now it won't unlock your wallet. Perhaps it involves different numbers or different capitalization than you remember.",
     action: "Recover my password",
-    href: "#",
+    href: "/contact",
   },
   {
     icon: FiKey,
     title: "Partial seed phrase recovery",
     desc: "You wrote down a list of words, and the passphrase is some combination of those words.",
     action: "Recover my seed",
-    href: "#",
+    href: "/contact",
   },
   {
     icon: FaWallet,
     title: "Lost access to a major chain wallet",
     desc: "You have lost access to a common crypto asset, such as Bitcoin, Ethereum, Litecoin, Dogecoin, an NFT or dozens of other alt coins",
     action: "Recover my wallet",
-    href: "#",
+    href: "/contact",
   },
   {
     icon: FiAlertCircle,
     title: "You've been scammed",
     desc: "We offer a Tracing service and recovery service for those looking to build their case and hopefully uncover the real-world identity of their scammer.",
     action: "Recover my funds",
-    href: "#",
+    href: "/contact",
   },
 ];
 
